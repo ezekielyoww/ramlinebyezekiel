@@ -1,0 +1,214 @@
+/*
+Francisco Ezekiel Ello
+Bootstrap components that I used:
+- Navbar for the floor navigation buttons and the placement of the logo on the left.
+- Cards for stall listings and menu items.
+- Buttons for the view menu, closed and other controls.
+- Badges for the stall statuses, wait times, and sold out labels.
+- Alert for the order confirmation banner.
+- Form controls for the kitchen notes label and text area in the cart.
+- Close button for close controls on menus and the order tracker.
+- Tooltips for the message above each closed button.
+*/
+.track-order-button {
+    width: 100%;
+    padding: 14px 16px;
+    border: 0;
+    border-radius: 14px;
+    background-color: #1b4b92;
+    color: #F5C51B;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.track-order-button:focus-visible {
+    outline: 2px solid #1b4b92;
+    outline-offset: 3px;
+}
+
+.order-status-popover {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    width: min(390px, calc(100vw - 24px));
+    max-width: none;
+    max-height: min(90vh, 760px);
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    transform: translate(-50%, -50%);
+    border: 0;
+    border-radius: 28px;
+    background-color: #ededed;
+    box-shadow: 0 16px 48px rgb(0 0 0 / 28%);
+}
+
+.order-status-content {
+    display: grid;
+    gap: 14px;
+    padding: 16px;
+}
+
+.order-status-header {
+    position: relative;
+    padding: 20px 16px 16px;
+    border-radius: 20px;
+    background-color: #1b4b92;
+    color: #ffffff;
+    text-align: center;
+}
+
+.order-status-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    filter: invert(1);
+    opacity: 0.9;
+}
+
+.order-status-number {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.order-status-header h2 {
+    margin: 2px 0 0;
+    color: #F5C51B;
+    font-size: 2.7rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.order-status-time {
+    margin: 2px 0 14px;
+    font-size: 0.8rem;
+}
+
+.order-status-pickup {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background-color: rgb(255 255 255 / 18%);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.order-status-card,
+.order-status-payment {
+    padding: 16px;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 6%);
+}
+
+.stepper {
+    display: grid;
+    gap: var(--bs-stepper-gap, 1.25rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.stepper-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+    min-height: 44px;
+    color: #b7b7b7;
+}
+
+.stepper-item:not(:last-child)::after {
+    position: absolute;
+    top: 30px;
+    bottom: calc(-1 * var(--bs-stepper-gap, 1.25rem) + 4px);
+    left: 14px;
+    width: 2px;
+    background-color: #dedede;
+    content: "";
+}
+
+.stepper-marker {
+    z-index: 1;
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.stepper-item.active {
+    color: #319f52;
+}
+
+.stepper-item.active .stepper-marker {
+    background-color: #39a85b;
+}
+
+.stepper-item.current {
+    color: #c39200;
+}
+
+.stepper-item.current .stepper-marker {
+    background-color: #f5c51b;
+    color: #1b1b1b;
+}
+
+.stepper-item > div {
+    display: grid;
+    gap: 2px;
+    padding-top: 1px;
+}
+
+.stepper-item strong {
+    font-size: 0.95rem;
+}
+
+.stepper-item > div > span {
+    color: #777777;
+    font-size: 0.75rem;
+}
+
+.order-status-summary {
+    display: grid;
+    gap: 8px;
+}
+
+.order-status-summary h3 {
+    margin: 0 0 2px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.order-status-summary .cart-total-row {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+.order-status-payment {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+}
+
+.order-status-payment .payment-icon {
+    flex: 0 0 40px;
+}
+
+.order-status-unpaid {
+    margin-left: auto;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background-color: #dce8fa;
+    color: #526b91;
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
